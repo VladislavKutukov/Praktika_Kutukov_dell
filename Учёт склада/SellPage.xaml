@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Учёт_склада.SellPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Учёт_склада"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Label FontSize="20" Content="Поиск по названию:" Grid.Row="0" Grid.Column="0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
+        <TextBox x:Name="SearchTextBox" FontSize="18" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="200,4,0,4" Width="200" TextChanged="SearchTextBox_TextChanged"/>
+        <ListView x:Name="ProductsListView" Grid.RowSpan="2" BorderThickness="0" Grid.Column="0" Grid.Row="1"/>
+        <Label FontSize="20" Content="Корзина:" Grid.Row="0" Grid.Column="1"/>
+        <ListBox FontSize="16" Grid.Row="1" Grid.Column="1" Name="CartListBox"/>
+        <Label FontSize="20" Content="Итого:" Grid.Row="2" Grid.Column="1" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
+        <Label FontSize="20" Grid.Row="2" Grid.Column="1" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="189" Margin="68,0,0,0" x:Name="SummaryCostLabel"/>
+        <Button x:Name="BuyButton" FontSize="20" Grid.Row="2" Grid.Column="1" Height="35" Content="Покупка" Width="150" Margin="0,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="BuyButton_Click"/>
+        <Button x:Name="ClearCartButton" FontSize="16" Grid.Row="0" Grid.Column="1" Height="25" Content="очистить" Width="103" Margin="152,7,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ClearCartButton_Click"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,54 @@
+﻿<Window x:Class="Учёт_склада.EditProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Учёт_склада"
+        mc:Ignorable="d"
+        Title="EditProductWindow" Height="593.254" Width="338.763">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="230"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="Название:" FontSize="20"/>
+            <TextBox x:Name="NameTextBox" Width="180" Height="30"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="Тип:"/>
+            <ComboBox x:Name="TypeNameComboBox" FontSize="18" Width="222" Height="30"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="Стоимость, руб."/>
+            <TextBox x:Name="CostTextBox" Width="154" Height="30"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Vertical">
+            <Label Content="Изображение:"/>
+            <Image Name="ProductImageBox" Height="150"/>
+            <Button Content="Выбрать изображение" Height="32" Name="ChangeImageButton" Width="220" Margin="0,10,0,0" Click="ChangeImageButton_Click"/>
+        </StackPanel>
+        <Label Grid.Row="4" Content="Описание:"/>
+        <TextBox Grid.Row="5" Name="DescriptionTextBox" Margin="5,0" TextWrapping="Wrap" FontSize="16"/>
+        <Button Grid.Row="6" Content="Сохранить" Width="120" Height="32" Click="SaveButton_Click"/>
+    </Grid>
+</Window>
